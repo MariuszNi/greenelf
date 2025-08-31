@@ -1,3 +1,6 @@
+<!-- =========================
+ INDEX.HTML (główna)
+========================= -->
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -8,60 +11,33 @@
   <meta name="robots" content="index,follow" />
   <link rel="icon" href="/favicon.ico" />
   <style>
-    :root{
-      --bg:#ffffff;--panel:#f7f9fa;--accent:#2ecc71;--accent-2:#27ae60;--text:#1a1a1a;--muted:#555;
-      --shadow:0 4px 12px rgba(0,0,0,.08);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
+    :root{--bg:#ffffff;--panel:#f7f9fa;--accent:#2ecc71;--accent-2:#27ae60;--text:#1a1a1a;--muted:#555;--shadow:0 4px 12px rgba(0,0,0,.08);}*{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
     .wrap{max-width:1200px;margin:0 auto;padding:20px}
     header{position:sticky;top:0;background:#fff;z-index:10;border-bottom:1px solid #ddd;box-shadow:var(--shadow)}
     .nav{display:flex;align-items:center;gap:20px;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:12px}
     .brand img{height:40px}
     .brand h1{font-size:18px;margin:0;color:#333}
-    .cta{display:flex;gap:10px;align-items:center}
-    .btn{appearance:none;border:1px solid #ccc;background:#fff;color:#333;padding:10px 14px;border-radius:8px;cursor:pointer;transition:.2s;box-shadow:var(--shadow)}
-    .btn:hover{transform:translateY(-1px);border-color:var(--accent)}
-    .btn.primary{background:linear-gradient(135deg,var(--accent-2),var(--accent));border:none;color:#fff}
-
+    .cta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .btn{appearance:none;border:1px solid #ccc;background:#fff;color:#333;padding:10px 14px;border-radius:8px;cursor:pointer;transition:.2s;box-shadow:var(--shadow)}.btn:hover{transform:translateY(-1px);border-color:var(--accent)}.btn.primary{background:linear-gradient(135deg,var(--accent-2),var(--accent));border:none;color:#fff}
     .hero{padding:64px 0;background:#f0f8f4}
     .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
     .hero h2{font-size:40px;line-height:1.1;margin:0 0 12px;color:#111}
     .hero p{color:var(--muted);margin:0 0 20px}
     .card{background:var(--panel);border:1px solid #ddd;border-radius:12px;padding:18px;box-shadow:var(--shadow)}
     .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
-    .kpi{background:#fff;border:1px solid #ddd;border-radius:10px;padding:12px;text-align:center}
-    .kpi b{display:block;font-size:22px;color:#000}
-
-    .section{padding:36px 0}
-    .section h3{font-size:26px;margin:0 0 16px;color:#111}
-
+    .kpi{background:#fff;border:1px solid #ddd;border-radius:10px;padding:12px;text-align:center}.kpi b{display:block;font-size:22px;color:#000}
+    .section{padding:36px 0}.section h3{font-size:26px;margin:0 0 16px;color:#111}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .product{display:flex;flex-direction:column;gap:10px}
-    .product img{width:100%;border-radius:10px}
-    .tags{display:flex;gap:8px;flex-wrap:wrap}
-    .tag{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid #ccc;color:#333;background:#fff}
-
+    .product{display:flex;flex-direction:column;gap:10px}.product img{width:100%;border-radius:10px}
     .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .feature{display:flex;gap:12px;align-items:flex-start}
-    .feature .ico{width:36px;height:36px;border-radius:10px;background:#fff;display:grid;place-items:center;border:1px solid #ccc}
-
+    .feature{display:flex;gap:12px;align-items:flex-start}.feature .ico{width:36px;height:36px;border-radius:10px;background:#fff;display:grid;place-items:center;border:1px solid #ccc}
     .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .list{margin:0;padding-left:18px;color:var(--muted)}
-
-    footer{border-top:1px solid #ddd;margin-top:36px;background:#f9f9f9}
-    .foot{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:24px 0;color:#666}
-
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}.list{margin:0;padding-left:18px;color:var(--muted)}
+    footer{border-top:1px solid #ddd;margin-top:36px;background:#f9f9f9}.foot{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:24px 0;color:#666}
     .notice{font-size:12px;color:#666}
-
-    @media (max-width:960px){
-      .hero-grid,.grid,.features,.two,.contact{grid-template-columns:1fr}
-    }
+    @media (max-width:960px){.hero-grid,.grid,.features,.two,.contact{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -72,10 +48,10 @@
         <h1>GreenElf – Dystrybutor PL</h1>
       </div>
       <div class="cta">
-        <div id="gtranslate"></div>
-        <a class="btn" href="#produkty">Produkty</a>
-        <a class="btn" href="#zalety">Zalety</a>
-        <a class="btn" href="#faq">FAQ</a>
+        <a class="btn" href="501_series.html">Seria 501</a>
+        <a class="btn" href="301_series.html">Seria 301</a>
+        <a class="btn" href="pictures.html">Zdjęcia</a>
+        <a class="btn" href="brochures.html">Broszury</a>
         <a class="btn" href="#kontakt">Kontakt</a>
         <a class="btn primary" href="#zamow">Złóż zapytanie</a>
       </div>
@@ -95,7 +71,8 @@
           </div>
         </div>
         <div class="card">
-          <img src="https://www.greenelfworks.com/images/501-HH-hero.jpg" alt="GreenElf applicator" />
+          <img src="img/501/hero.jpg" alt="GreenElf applicator" />
+          <p class="notice">Wstaw plik: <code>img/501/hero.jpg</code></p>
         </div>
       </div>
     </section>
@@ -105,59 +82,32 @@
         <h3>Produkty</h3>
         <div class="grid">
           <div class="card product">
-            <img src="https://www.greenelfworks.com/images/501-HH.jpg" alt="501-HH" />
-            <b>GreenElf Applicator 501-HH</b>
-            <p>Ręczny aplikator granulatu do nawozów CRF i insektycydów. Elektroniczna kontrola dawki, tryb Pace-Firing™, pojemność tuby 5.5 lub 9.5 kg.</p>
-            <a class="btn" href="https://www.greenelfworks.com/products.html">Szczegóły</a>
+            <img src="img/501/501-HH.jpg" alt="501-HH" />
+            <b>GreenElf Applicator 501‑HH</b>
+            <p>Ręczny aplikator granulatu do nawozów CRF i insektycydów. Elektroniczna kontrola dawki, tryb Pace‑Firing™, pojemność tuby 5.5 lub 9.5 kg.</p>
+            <a class="btn" href="501_series.html">Szczegóły – Seria 501</a>
           </div>
           <div class="card product">
-            <img src="https://www.greenelfworks.com/images/501-AI.jpg" alt="501-AI" />
-            <b>GreenElf Applicator 501-AI</b>
+            <img src="img/501/501-AI.jpg" alt="501-AI" />
+            <b>GreenElf Applicator 501‑AI</b>
             <p>Automatyczny model do integracji z liniami produkcyjnymi. Wyzwalanie zdalne, wysoka powtarzalność, licznik strzałów.</p>
-            <a class="btn" href="https://www.greenelfworks.com/products.html">Szczegóły</a>
+            <a class="btn" href="501_series.html#ai">Szczegóły – 501‑AI</a>
           </div>
           <div class="card product">
-            <img src="https://www.greenelfworks.com/images/accessories.jpg" alt="Akcesoria" />
+            <img src="img/accessories/accessories.jpg" alt="Akcesoria" />
             <b>Akcesoria</b>
             <p>Przewody, przyciski, wyświetlacze, elektrozawory, elementy montażowe.</p>
-            <a class="btn" href="#zamow">Zapytaj o dostępność</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="zalety" class="section">
-      <div class="wrap features">
-        <div class="feature">
-          <div class="ico">⚡</div>
-          <div>
-            <b>Szybkość i ergonomia</b>
-            <p>Lekkie zespoły, elektroniczny spust, brak dźwigni.</p>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="ico">🎯</div>
-          <div>
-            <b>Dokładność</b>
-            <p>Kontrola dawki, liczniki strzałów, powtarzalność.</p>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="ico">🔧</div>
-          <div>
-            <b>Serwis i części</b>
-            <p>Zapewniamy diagnostykę i szybkie dostawy elementów zamiennych.</p>
+            <a class="btn" href="pictures.html">Zobacz zdjęcia</a>
           </div>
         </div>
       </div>
     </section>
 
     <section id="faq" class="section">
-      <div class="wrap card">
-        <h3>FAQ</h3>
-        <p><b>Czy można używać z każdym granulatem?</b><br> Tak, urządzenie obsługuje CRF, herbicydy i insektycydy, ale parametry zależą od granulacji.</p>
-        <p><b>Ile wytrzymuje bateria?</b><br> Do ~40 000 strzałów na ładowaniu.</p>
-        <p><b>Czy możliwa jest praca automatyczna?</b><br> Tak, model 501-AI integruje się z liniami doniczkarskimi.</p>
+      <div class="wrap features">
+        <div class="feature"><div class="ico">⚡</div><div><b>Szybkość i ergonomia</b><p>Lekkie zespoły, elektroniczny spust, brak dźwigni.</p></div></div>
+        <div class="feature"><div class="ico">🎯</div><div><b>Dokładność</b><p>Kontrola dawki, liczniki strzałów, powtarzalność.</p></div></div>
+        <div class="feature"><div class="ico">🔧</div><div><b>Serwis i części</b><p>Zapewniamy diagnostykę i szybkie dostawy elementów zamiennych.</p></div></div>
       </div>
     </section>
 
@@ -168,9 +118,9 @@
           <ul class="list">
             <li><b>ABAX Mariusz Niezgoda</b></li>
             <li>ul. Narutowicza 25/54</li>
-            <li>78-400 Szczecinek</li>
+            <li>78‑400 Szczecinek</li>
             <li>tel. 694 487 589</li>
-            <li>e-mail: phu.abax@gmail.com</li>
+            <li>e‑mail: phu.abax@gmail.com</li>
           </ul>
         </div>
         <div class="card">
@@ -192,7 +142,7 @@
           <input class="btn" style="background:#fff" name="name" placeholder="Imię i nazwisko" required />
           <input class="btn" style="background:#fff" name="company" placeholder="Firma (opcjonalnie)" />
           <input class="btn" style="background:#fff" name="phone" placeholder="Telefon" required />
-          <input class="btn" style="background:#fff" name="email" placeholder="E-mail" required />
+          <input class="btn" style="background:#fff" name="email" placeholder="E‑mail" required />
           <textarea class="btn" style="background:#fff;grid-column:1/-1" rows="4" name="msg" placeholder="Wiadomość" required></textarea>
           <button class="btn primary" style="grid-column:1/-1">Wyślij zapytanie</button>
         </form>
@@ -202,13 +152,128 @@
 
   <footer>
     <div class="wrap foot">
-      <div>
-        © <span id="y"></span> GreenElf – ABAX Mariusz Niezgoda, Szczecinek • Oficjalny dystrybutor w Polsce
-      </div>
+      <div>© <span id="y"></span> GreenElf – ABAX Mariusz Niezgoda, Szczecinek • Oficjalny dystrybutor w Polsce</div>
       <div><a class="btn" href="#top">⬆︎ Do góry</a></div>
     </div>
   </footer>
-
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
+
+
+<!-- =========================
+ 501_SERIES.HTML
+========================= -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenElf – Seria 501</title>
+  <link rel="icon" href="/favicon.ico" />
+  <style>body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#1a1a1a;background:#fff}a{color:#2ecc71}header,footer{border-bottom:1px solid #ddd}footer{border-top:1px solid #ddd;border-bottom:none;background:#f9f9f9}.wrap{max-width:1100px;margin:0 auto;padding:20px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:900px){.grid{grid-template-columns:1fr}}.card{background:#f7f9fa;border:1px solid #ddd;border-radius:12px;padding:16px}.hero img,.card img{width:100%;border-radius:10px}</style>
+</head>
+<body>
+<header><div class="wrap" style="display:flex;align-items:center;gap:14px;justify-content:space-between"><div style="display:flex;align-items:center;gap:12px"><img src="greenelfworks_logo2.gif" height="36" alt="logo"><b>Seria 501</b></div><nav style="display:flex;gap:10px"><a href="index.html">Strona główna</a><a href="301_series.html">Seria 301</a><a href="pictures.html">Zdjęcia</a><a href="brochures.html">Broszury</a></nav></div></header>
+<main class="wrap">
+  <section class="hero card"><div class="grid"><div><h1>GreenElf 501 Series</h1><p>Modele: <b>501‑HH (Hand‑Held)</b> oraz <b id="ai">501‑AI (Automated/Industrial)</b>. Precyzyjne dozowanie granulatu, tryb Single‑Shot i Pace‑Firing™, liczniki strzałów, szybkie przezbrojenia.</p><ul><li>Zakres ustawień dawki: ok. <b>~250 kroków</b> (~3–77 g/strzał – zależnie od granulatu).</li><li>Pojemność tuby: <b>~5.5 kg (Ø63 mm)</b> lub <b>~9.5 kg (Ø83 mm)</b>.</li><li>Zasilanie cewki: <b>24 V DC</b>; logika: <b>5 V</b>.</li></ul></div><div><img src="img/501/hero.jpg" alt="Seria 501 – hero"></div></div></section>
+  <section class="grid" style="margin-top:18px">
+    <div class="card"><img src="img/501/501-HH.jpg" alt="501-HH"><h3>501‑HH (ręczny)</h3><ul><li>Elektroniczny spust, lekkie zespoły.</li><li>Skuteczny dla CRF i innych granulatów.</li><li>Dynamic Bridging – ogranicza zacięcia.</li></ul></div>
+    <div class="card"><img src="img/501/501-AI.jpg" alt="501-AI"><h3>501‑AI (automatyczny)</h3><ul><li>Integracja z liniami – zdalny trigger.</li><li>Wysoka powtarzalność dawek.</li><li>Liczniki dzienne i całkowite.</li></ul></div>
+  </section>
+  <section style="margin-top:18px" class="card"><h3>Materiały</h3><ul><li><a href="docs/GreenElf-501-Brochure.pdf">Broszura (PDF)</a></li><li><a href="docs/GreenElf-User-Guide.pdf">Instrukcja użytkownika (PDF)</a></li></ul></section>
+</main>
+<footer><div class="wrap">© <span id="y501"></span> GreenElf – ABAX Mariusz Niezgoda</div></footer>
+<script>document.getElementById('y501').textContent=new Date().getFullYear();</script>
+</body>
+</html>
+
+
+<!-- =========================
+ 301_SERIES.HTML
+========================= -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenElf – Seria 301</title>
+  <link rel="icon" href="/favicon.ico" />
+  <style>body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#1a1a1a;background:#fff}a{color:#2ecc71}header,footer{border-bottom:1px solid #ddd}footer{border-top:1px solid #ddd;border-bottom:none;background:#f9f9f9}.wrap{max-width:1100px;margin:0 auto;padding:20px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:900px){.grid{grid-template-columns:1fr}}.card{background:#f7f9fa;border:1px solid #ddd;border-radius:12px;padding:16px}.hero img,.card img{width:100%;border-radius:10px}</style>
+</head>
+<body>
+<header><div class="wrap" style="display:flex;align-items:center;gap:14px;justify-content:space-between"><div style="display:flex;align-items:center;gap:12px"><img src="greenelfworks_logo2.gif" height="36" alt="logo"><b>Seria 301</b></div><nav style="display:flex;gap:10px"><a href="index.html">Strona główna</a><a href="501_series.html">Seria 501</a><a href="pictures.html">Zdjęcia</a><a href="brochures.html">Broszury</a></nav></div></header>
+<main class="wrap">
+  <section class="hero card"><div class="grid"><div><h1>GreenElf 301 Series</h1><p>Kompaktowe aplikatory do mniejszych dawek i węższych lejów. Zachowana prostota obsługi i powtarzalność typowa dla GreenElf.</p><ul><li>Precyzyjne, szybkie strzały; elektroniczny spust.</li><li>Zasilanie cewki 24 V DC.</li><li>Tryb Single‑Shot i liczniki.</li></ul></div><div><img src="img/301/hero.jpg" alt="Seria 301 – hero"></div></div></section>
+  <section class="grid" style="margin-top:18px">
+    <div class="card"><img src="img/301/301-1.jpg" alt="301 – wariant 1"><h3>301 – wariant 1</h3><p>Wąski kanał zsypowy, lekkie ramię prowadzące.</p></div>
+    <div class="card"><img src="img/301/301-2.jpg" alt="301 – wariant 2"><h3>301 – wariant 2</h3><p>Większy zasobnik, ten sam panel sterowania.</p></div>
+  </section>
+  <section style="margin-top:18px" class="card"><h3>Materiały</h3><ul><li><a href="docs/GreenElf-301-Brochure.pdf">Broszura 301 (PDF)</a></li></ul></section>
+</main>
+<footer><div class="wrap">© <span id="y301"></span> GreenElf – ABAX Mariusz Niezgoda</div></footer>
+<script>document.getElementById('y301').textContent=new Date().getFullYear();</script>
+</body>
+</html>
+
+
+<!-- =========================
+ PICTURES.HTML (galeria)
+========================= -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenElf – Zdjęcia</title>
+  <link rel="icon" href="/favicon.ico" />
+  <style>body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#1a1a1a;background:#fff}a{color:#2ecc71}.wrap{max-width:1200px;margin:0 auto;padding:20px}header,footer{border-bottom:1px solid #ddd}footer{border-top:1px solid #ddd;border-bottom:none;background:#f9f9f9}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}.tile{border:1px solid #ddd;border-radius:10px;overflow:hidden;background:#f7f9fa}.tile img{width:100%;display:block}</style>
+</head>
+<body>
+<header><div class="wrap" style="display:flex;align-items:center;gap:14px;justify-content:space-between"><div style="display:flex;align-items:center;gap:12px"><img src="greenelfworks_logo2.gif" height="36" alt="logo"><b>Galeria zdjęć</b></div><nav style="display:flex;gap:10px"><a href="index.html">Strona główna</a><a href="501_series.html">Seria 501</a><a href="301_series.html">Seria 301</a><a href="brochures.html">Broszury</a></nav></div></header>
+<main class="wrap">
+  <div class="grid">
+    <a class="tile" href="img/gallery/01.jpg"><img src="img/gallery/01.jpg" alt="GreenElf – zdjęcie 01"></a>
+    <a class="tile" href="img/gallery/02.jpg"><img src="img/gallery/02.jpg" alt="GreenElf – zdjęcie 02"></a>
+    <a class="tile" href="img/gallery/03.jpg"><img src="img/gallery/03.jpg" alt="GreenElf – zdjęcie 03"></a>
+    <a class="tile" href="img/gallery/04.jpg"><img src="img/gallery/04.jpg" alt="GreenElf – zdjęcie 04"></a>
+    <a class="tile" href="img/gallery/05.jpg"><img src="img/gallery/05.jpg" alt="GreenElf – zdjęcie 05"></a>
+    <a class="tile" href="img/gallery/06.jpg"><img src="img/gallery/06.jpg" alt="GreenElf – zdjęcie 06"></a>
+    <a class="tile" href="img/gallery/07.jpg"><img src="img/gallery/07.jpg" alt="GreenElf – zdjęcie 07"></a>
+    <a class="tile" href="img/gallery/08.jpg"><img src="img/gallery/08.jpg" alt="GreenElf – zdjęcie 08"></a>
+    <a class="tile" href="img/gallery/09.jpg"><img src="img/gallery/09.jpg" alt="GreenElf – zdjęcie 09"></a>
+    <a class="tile" href="img/gallery/10.jpg"><img src="img/gallery/10.jpg" alt="GreenElf – zdjęcie 10"></a>
+    <a class="tile" href="img/gallery/11.jpg"><img src="img/gallery/11.jpg" alt="GreenElf – zdjęcie 11"></a>
+    <a class="tile" href="img/gallery/12.jpg"><img src="img/gallery/12.jpg" alt="GreenElf – zdjęcie 12"></a>
+  </div>
+</main>
+<footer><div class="wrap">© <span id="yp"></span> GreenElf – ABAX Mariusz Niezgoda</div></footer>
+<script>document.getElementById('yp').textContent=new Date().getFullYear();</script>
+</body>
+</html>
+
+
+<!-- =========================
+ BROCHURES.HTML (pliki PDF)
+========================= -->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenElf – Broszury i dokumenty</title>
+  <link rel="icon" href="/favicon.ico" />
+  <style>body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#1a1a1a;background:#fff}a{color:#2ecc71}.wrap{max-width:900px;margin:0 auto;padding:20px}header,footer{border-bottom:1px solid #ddd}footer{border-top:1px solid #ddd;border-bottom:none;background:#f9f9f9}.list{line-height:1.8}</style>
+</head>
+<body>
+<header><div class="wrap" style="display:flex;align-items:center;gap:14px;justify-content:space-between"><div style="display:flex;align-items:center;gap:12px"><img src="greenelfworks_logo2.gif" height="36" alt="logo"><b>Broszury</b></div><nav style="display:flex;gap:10px"><a href="index.html">Strona główna</a><a href="501_series.html">Seria 501</a><a href="301_series.html">Seria 301</a><a href="pictures.html">Zdjęcia</a></nav></div></header>
+<main class="wrap">
+  <h1>Materiały do pobrania</h1>
+  <ul class="list">
+    <li><a href="docs/GreenElf-Overview.pdf">GreenElf – broszura główna (PDF)</a></li>
+    <li><a href="docs/GreenElf-User-Guide.pdf">Instrukcja użytkownika (PDF)</a></li>
+    <li><a href="docs/GreenElf-501-Brochure.pdf">Seria 501 – broszura (PDF)</a></li>
+    <li><a href="docs/GreenElf-301-Brochure.pdf">Seria 301 – broszura (PDF)</a></li>
+  </ul>
+  <p class="notice">Umieść powyższe pliki w katalogu <code>/docs</code> na serwerze.</p>
+</main>
+<footer><div class="wrap">© <span id="yb"></span> GreenElf – ABAX Mariusz Niezgoda</div></footer>
+<script>document.getElementById('yb').textContent=new Date().getFullYear();</script>
 </body>
 </html>
