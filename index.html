@@ -9,76 +9,66 @@
   <link rel="icon" href="/favicon.ico" />
   <style>
     :root{
-      --bg:#0b0f10;--panel:#12181b;--accent:#2ecc71;--accent-2:#27ae60;--text:#e7ecef;--muted:#9fb3c8;
-      --shadow:0 8px 24px rgba(0,0,0,.25);
+      --bg:#ffffff;--panel:#f7f9fa;--accent:#2ecc71;--accent-2:#27ae60;--text:#1a1a1a;--muted:#555;
+      --shadow:0 4px 12px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);}
-    a{color:var(--accent)}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
     .wrap{max-width:1200px;margin:0 auto;padding:20px}
-    header{position:sticky;top:0;background:rgba(11,15,16,.85);backdrop-filter:saturate(140%) blur(8px);z-index:10;border-bottom:1px solid #1d2529}
+    header{position:sticky;top:0;background:#fff;z-index:10;border-bottom:1px solid #ddd;box-shadow:var(--shadow)}
     .nav{display:flex;align-items:center;gap:20px;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#001b09;font-weight:800}
-    .brand h1{font-size:18px;margin:0}
+    .brand img{height:40px}
+    .brand h1{font-size:18px;margin:0;color:#333}
     .cta{display:flex;gap:10px;align-items:center}
-    .btn{appearance:none;border:1px solid #28443a;background:#0f1416;color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer;transition:.2s;box-shadow:var(--shadow)}
+    .btn{appearance:none;border:1px solid #ccc;background:#fff;color:#333;padding:10px 14px;border-radius:8px;cursor:pointer;transition:.2s;box-shadow:var(--shadow)}
     .btn:hover{transform:translateY(-1px);border-color:var(--accent)}
-    .btn.primary{background:linear-gradient(135deg,var(--accent-2),var(--accent));border:none;color:#062312}
+    .btn.primary{background:linear-gradient(135deg,var(--accent-2),var(--accent));border:none;color:#fff}
 
-    .hero{padding:64px 0;background:radial-gradient(1200px 600px at 80% -100px,rgba(46,204,113,.18),transparent);}
+    .hero{padding:64px 0;background:#f0f8f4}
     .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
-    .hero h2{font-size:40px;line-height:1.1;margin:0 0 12px}
+    .hero h2{font-size:40px;line-height:1.1;margin:0 0 12px;color:#111}
     .hero p{color:var(--muted);margin:0 0 20px}
-    .card{background:var(--panel);border:1px solid #1e2a2f;border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+    .card{background:var(--panel);border:1px solid #ddd;border-radius:12px;padding:18px;box-shadow:var(--shadow)}
     .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
-    .kpi{background:#0f1517;border:1px solid #203036;border-radius:14px;padding:12px;text-align:center}
-    .kpi b{display:block;font-size:22px}
+    .kpi{background:#fff;border:1px solid #ddd;border-radius:10px;padding:12px;text-align:center}
+    .kpi b{display:block;font-size:22px;color:#000}
 
     .section{padding:36px 0}
-    .section h3{font-size:26px;margin:0 0 16px}
+    .section h3{font-size:26px;margin:0 0 16px;color:#111}
 
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .product{display:flex;flex-direction:column;gap:10px}
-    .product .img{height:160px;border-radius:14px;background:#0d1213;border:1px dashed #27423a;display:grid;place-items:center;color:#6bcf99}
+    .product img{width:100%;border-radius:10px}
     .tags{display:flex;gap:8px;flex-wrap:wrap}
-    .tag{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid #28443a;color:#a8dbc2}
+    .tag{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid #ccc;color:#333;background:#fff}
 
     .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .feature{display:flex;gap:12px;align-items:flex-start}
-    .feature .ico{width:36px;height:36px;border-radius:10px;background:#0f1517;display:grid;place-items:center;border:1px solid #203036}
+    .feature .ico{width:36px;height:36px;border-radius:10px;background:#fff;display:grid;place-items:center;border:1px solid #ccc}
 
     .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 
     .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     .list{margin:0;padding-left:18px;color:var(--muted)}
 
-    footer{border-top:1px solid #1d2529;margin-top:36px}
-    .foot{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:24px 0;color:var(--muted)}
+    footer{border-top:1px solid #ddd;margin-top:36px;background:#f9f9f9}
+    .foot{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:24px 0;color:#666}
 
-    .notice{font-size:12px;color:#93a7b9}
+    .notice{font-size:12px;color:#666}
 
     @media (max-width:960px){
       .hero-grid,.grid,.features,.two,.contact{grid-template-columns:1fr}
-      .kpis{grid-template-columns:repeat(3,1fr)}
-    }
-    @media (max-width:640px){
-      .kpis{grid-template-columns:1fr 1fr}
-      .hero h2{font-size:32px}
     }
   </style>
-  <script>
-    function googleTranslateElementInit(){
-      new google.translate.TranslateElement({pageLanguage:'pl',includedLanguages:'pl,en,de,it,es',autoDisplay:false},'gtranslate');
-    }
-  </script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
   <header>
     <div class="wrap nav">
       <div class="brand">
-        <div class="logo">GE</div>
+        <img src="logo-greenelf.png" alt="GreenElf logo"/>
         <h1>GreenElf – Dystrybutor PL</h1>
       </div>
       <div class="cta">
@@ -96,68 +86,41 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="card">
-          <h2>Aplikatory granulatu GreenElf<br/>– proste, szybkie i skuteczne</h2>
-          <p>Oficjalny dystrybutor w Polsce. Dostarczamy sterowniki, elektrozawory, akcesoria i wsparcie serwisowe do aplikacji mikrogranulatu i nasion.</p>
+          <h2>Aplikatory granulatu GreenElf</h2>
+          <p>Oficjalny dystrybutor w Polsce. Oferujemy sterowniki, elektrozawory, akcesoria i wsparcie serwisowe do aplikacji mikrogranulatu i nasion.</p>
           <div class="kpis">
-            <div class="kpi"><b>24&nbsp;V DC</b><span>zasilanie cewek</span></div>
-            <div class="kpi"><b>5&nbsp;V</b><span>logika MCU</span></div>
-            <div class="kpi"><b>1–500&nbsp;ms</b><span>czas strzału</span></div>
+            <div class="kpi"><b>24 V DC</b><span>zasilanie cewek</span></div>
+            <div class="kpi"><b>5 V</b><span>logika MCU</span></div>
+            <div class="kpi"><b>1–500 ms</b><span>czas strzału</span></div>
           </div>
         </div>
         <div class="card">
-          <div class="img" style="height:260px">Miejsce na zdjęcie produktu</div>
-          <p class="notice">Wstaw tu swoje zdjęcie aplikatora.</p>
+          <img src="https://www.greenelfworks.com/images/501-HH-hero.jpg" alt="GreenElf applicator" />
         </div>
       </div>
     </section>
 
     <section id="produkty" class="section">
       <div class="wrap">
-        <h3>Produkty / Modele</h3>
+        <h3>Produkty</h3>
         <div class="grid">
           <div class="card product">
-            <div class="img">Model ECO‑501‑HH</div>
-            <b>GreenElf Applicator 501‑HH (Hand‑Held)</b>
-            <p>Ręczny aplikator granulatu do top‑dressingu (CRF, herbicydy, insektycydy). Elektroniczny spust, precyzyjne dawkowanie, lekkie i wygodne nadgarstkowo.</p>
-            <ul class="list">
-              <li>Elektroniczna kontrola dawki: <b>~250 ustawień</b> (ok. <b>3–77 g/strzał</b>)</li>
-              <li>Tryby: <b>Single‑Shot</b> i <b>Pace‑Firing™</b></li>
-              <li>Zasięg/dostęp: elastyczna rura zasobnika, świetny balans</li>
-              <li>Magazyn: dwie wersje tuby: <b>~5.5 kg (Ø63 mm)</b> lub <b>~9.5 kg (Ø83 mm)</b></li>
-              <li>Typowe czasy pracy: do <b>~40 000 strzałów</b> na jednym ładowaniu</li>
-              <li>Dynamic Bridging Technology – brak zacięć, delikatny dla CRF</li>
-            </ul>
-            <div class="tags"><span class="tag">Hand‑Held</span><span class="tag">Dose Control</span><span class="tag">CRF</span></div>
-            <div>
-              <a class="btn" href="https://pdf.agriexpo.online/pdf/greenelf-works/ge-applicator-501-hh-wyg/178242-9879.html" target="_blank" rel="noopener">Karta produktu</a>
-              <a class="btn" href="https://docs.meyer-shop.com/685750A_EN.pdf" target="_blank" rel="noopener">Instrukcja (EN)</a>
-              <a class="btn" href="https://www.youtube.com/watch?v=O9HlLHDPrQQ" target="_blank" rel="noopener">Wideo</a>
-            </div>
+            <img src="https://www.greenelfworks.com/images/501-HH.jpg" alt="501-HH" />
+            <b>GreenElf Applicator 501-HH</b>
+            <p>Ręczny aplikator granulatu do nawozów CRF i insektycydów. Elektroniczna kontrola dawki, tryb Pace-Firing™, pojemność tuby 5.5 lub 9.5 kg.</p>
+            <a class="btn" href="https://www.greenelfworks.com/products.html">Szczegóły</a>
           </div>
           <div class="card product">
-            <div class="img">Model ECO‑501‑AI</div>
-            <b>GreenElf Applicator 501‑AI (Automated / Industrial)</b>
-            <p>Wersja automatyczna do linii doniczkarskich i taśm. Integracja przez zewnętrzny trigger, szybka i powtarzalna aplikacja.</p>
-            <ul class="list">
-              <li>Montaż na przenośnikach/potting machines, <b>REMOTE Trigger</b></li>
-              <li>Panel sterowania z licznikiem strzałów i ustawieniami dawki</li>
-              <li>Akcesoria: złącza obrotowe, zasuwy izolujące, przewody dostawcze</li>
-              <li>Typowe dawki jak w 501‑HH; szybkie przezbrojenia</li>
-            </ul>
-            <div class="tags"><span class="tag">Automated</span><span class="tag">Remote</span><span class="tag">Industrial</span></div>
-            <div>
-              <a class="btn" href="https://pdf.agriexpo.online/pdf/greenelf-works/greenelf-applicator-wyg-501-ai/178242-11239.html" target="_blank" rel="noopener">Karta produktu</a>
-              <a class="btn" href="https://www.youtube.com/watch?v=YHK9hmWdbps" target="_blank" rel="noopener">Wideo (AI)</a>
-            </div>
+            <img src="https://www.greenelfworks.com/images/501-AI.jpg" alt="501-AI" />
+            <b>GreenElf Applicator 501-AI</b>
+            <p>Automatyczny model do integracji z liniami produkcyjnymi. Wyzwalanie zdalne, wysoka powtarzalność, licznik strzałów.</p>
+            <a class="btn" href="https://www.greenelfworks.com/products.html">Szczegóły</a>
           </div>
           <div class="card product">
-            <div class="img">Akcesoria</div>
-            <b>Okablowanie i części</b>
-            <p>Przewody, przyciski wyzwalające (REMOTE), uchwyty, rury dostawcze, elektrozawory z krańcówką, wyświetlacze.</p>
-            <div class="tags"><span class="tag">OEM</span><span class="tag">Spare Parts</span></div>
-            <div>
-              <a class="btn" href="#zamow">Zapytaj o dostępność</a>
-            </div>
+            <img src="https://www.greenelfworks.com/images/accessories.jpg" alt="Akcesoria" />
+            <b>Akcesoria</b>
+            <p>Przewody, przyciski, wyświetlacze, elektrozawory, elementy montażowe.</p>
+            <a class="btn" href="#zamow">Zapytaj o dostępność</a>
           </div>
         </div>
       </div>
@@ -166,24 +129,24 @@
     <section id="zalety" class="section">
       <div class="wrap features">
         <div class="feature">
-          <div class="ico">⚙️</div>
+          <div class="ico">⚡</div>
           <div>
-            <b>Dokładne dozowanie</b>
-            <p class="notice">System umożliwia precyzyjne otwieranie i zamykanie zasuwy, co zapewnia powtarzalne dawki granulatu.</p>
+            <b>Szybkość i ergonomia</b>
+            <p>Lekkie zespoły, elektroniczny spust, brak dźwigni.</p>
           </div>
         </div>
         <div class="feature">
-          <div class="ico">🔋</div>
+          <div class="ico">🎯</div>
           <div>
-            <b>Zasilanie bateryjne</b>
-            <p class="notice">Wbudowany akumulator 14,4V, ładowany z 24V DC, umożliwia pracę w polu bez dostępu do sieci.</p>
+            <b>Dokładność</b>
+            <p>Kontrola dawki, liczniki strzałów, powtarzalność.</p>
           </div>
         </div>
         <div class="feature">
-          <div class="ico">🌍</div>
+          <div class="ico">🔧</div>
           <div>
-            <b>Wsparcie globalne</b>
-            <p class="notice">Produkty GreenElf są obecne w wielu krajach i wspierane przez oficjalnych dystrybutorów.</p>
+            <b>Serwis i części</b>
+            <p>Zapewniamy diagnostykę i szybkie dostawy elementów zamiennych.</p>
           </div>
         </div>
       </div>
@@ -191,27 +154,32 @@
 
     <section id="faq" class="section">
       <div class="wrap card">
-        <h3>FAQ – najczęstsze pytania</h3>
-        <ul class="list">
-          <li><b>Jak długo działa bateria?</b> – Średnio kilka dni pracy w polu, zależnie od intensywności użycia.</li>
-          <li><b>Czy mogę używać przy różnych granulatach?</b> – Tak, aplikator obsługuje większość mikrogranulatów i nasion.</li>
-          <li><b>Czy można zamówić części zamienne?</b> – Tak, dostępne są wyświetlacze, zawory, przewody i przyciski.</li>
-        </ul>
+        <h3>FAQ</h3>
+        <p><b>Czy można używać z każdym granulatem?</b><br> Tak, urządzenie obsługuje CRF, herbicydy i insektycydy, ale parametry zależą od granulacji.</p>
+        <p><b>Ile wytrzymuje bateria?</b><br> Do ~40 000 strzałów na ładowaniu.</p>
+        <p><b>Czy możliwa jest praca automatyczna?</b><br> Tak, model 501-AI integruje się z liniami doniczkarskimi.</p>
       </div>
     </section>
 
-    <section class="section">
-      <div class="wrap two">
+    <section id="kontakt" class="section">
+      <div class="wrap contact">
         <div class="card">
           <h3>Dystrybutor w Polsce</h3>
-          <p class="notice">Tu wstaw dane swojej firmy: adres, NIP, godziny pracy, linki do social mediów.</p>
+          <ul class="list">
+            <li><b>ABAX Mariusz Niezgoda</b></li>
+            <li>ul. Narutowicza 25/54</li>
+            <li>78-400 Szczecinek</li>
+            <li>tel. 694 487 589</li>
+            <li>e-mail: phu.abax@gmail.com</li>
+          </ul>
         </div>
         <div class="card">
-          <h3>Wsparcie techniczne</h3>
+          <h3>Kontakt producenta (AU)</h3>
           <ul class="list">
-            <li>Diagnostyka: zasilanie 5 V i 24 V, test zaworu, test wyświetlacza</li>
-            <li>Aktualizacje i kalibracja</li>
-            <li>Części: wyświetlacz, przyciski, przewody, solenoid, uchwyty</li>
+            <li>GreenElf Works</li>
+            <li>15 Landers Rd, Lane Cove North, NSW 2066, Australia</li>
+            <li>tel. +61 2 9418 6925</li>
+            <li>mail: info@greenelfworks.com</li>
           </ul>
         </div>
       </div>
@@ -220,97 +188,22 @@
     <section id="zamow" class="section">
       <div class="wrap card">
         <h3>Zapytanie ofertowe</h3>
-        <form action="#" method="post" onsubmit="alert('Dziękujemy! Skontaktujemy się wkrótce.'); return false;" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <input class="btn" style="background:#0f1416" name="name" placeholder="Imię i nazwisko" required />
-          <input class="btn" style="background:#0f1416" name="company" placeholder="Firma (opcjonalnie)" />
-          <input class="btn" style="background:#0f1416" name="phone" placeholder="Telefon" required />
-          <input class="btn" style="background:#0f1416" name="email" placeholder="E-mail" required />
-          <textarea class="btn" style="background:#0f1416;grid-column:1/-1" rows="4" name="msg" placeholder="Wiadomość: np. interesuje mnie sterownik + 2x solenoid + przewody..." required></textarea>
+        <form onsubmit="alert('Dziękujemy! Skontaktujemy się wkrótce.'); return false;" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <input class="btn" style="background:#fff" name="name" placeholder="Imię i nazwisko" required />
+          <input class="btn" style="background:#fff" name="company" placeholder="Firma (opcjonalnie)" />
+          <input class="btn" style="background:#fff" name="phone" placeholder="Telefon" required />
+          <input class="btn" style="background:#fff" name="email" placeholder="E-mail" required />
+          <textarea class="btn" style="background:#fff;grid-column:1/-1" rows="4" name="msg" placeholder="Wiadomość" required></textarea>
           <button class="btn primary" style="grid-column:1/-1">Wyślij zapytanie</button>
         </form>
       </div>
     </section>
-
-    <section id="kontakt" class="section">
-      <div class="wrap contact">
-        <div class="card">
-          <h3>Kontakt</h3>
-          <ul class="list">
-            <li>tel. +48 000 000 000</li>
-            <li>mail: biuro@twojadomena.pl</li>
-            <li>Magazyn: 00-000 Miasto, Ulica 1</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="img" style="height:220px">Mapa/zdjęcie siedziby</div>
-        </div>
-      </div>
-    </section>
-      <section class="section">
-      <div class="wrap two">
-        <div class="card">
-          <h3>Dlaczego GreenElf</h3>
-          <ul class="list">
-            <li><b>Szybkość i ergonomia:</b> lekkie zespoły, elektroniczny spust, brak dźwigni.</li>
-            <li><b>Dokładność:</b> elektroniczna kontrola dawki, liczniki strzałów, powtarzalność.</li>
-            <li><b>Elastyczność:</b> praca ręczna (HH) lub w pełni zautomatyzowana (AI) na liniach.</li>
-            <li><b>Oszczędność:</b> mniejsze zużycie nawozu/CRF, mniej poprawek i pracy ręcznej.</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Specyfikacje (skrót)</h3>
-          <ul class="list">
-            <li>Zasilanie elektroniki: 5 V (buck), sterowanie cewką: 24 V DC</li>
-            <li>Zakres dawek (orientacyjnie): ~3–77 g/strzał (ok. 250 kroków)</li>
-            <li>Magazyn: ~5.5 kg (Ø63 mm) lub ~9.5 kg (Ø83 mm)</li>
-            <li>Tryby: Single‑Shot / Pace‑Firing™; liczniki dzienne/całkowite</li>
-          </ul>
-          <p class="notice">Parametry zależne od materiału (granulacja, sypkość) i konfiguracji zestawu.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap card">
-        <h3>Materiały do pobrania</h3>
-        <ul class="list">
-          <li><a class="btn" href="https://d3pcsg2wjq9izr.cloudfront.net/files/83077/download/811523/4-greenelf_applicator_main_en.pdf" target="_blank" rel="noopener">Broszura główna (EN, PDF)</a></li>
-          <li><a class="btn" href="https://docs.meyer-shop.com/685750A_EN.pdf" target="_blank" rel="noopener">User Guide V3.0 (EN, PDF)</a></li>
-          <li><a class="btn" href="https://www.youtube.com/user/GreenElfWorks" target="_blank" rel="noopener">Kanał YouTube – filmy z pracy urządzeń</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap two">
-        <div class="card">
-          <h3>Kontakt producenta (AU)</h3>
-          <ul class="list">
-            <li>GreenElf Works, 15 Landers Rd, Lane Cove North, NSW 2066, Australia</li>
-            <li>tel. +61 2 9418 6925 • e‑mail: info@greenelfworks.com</li>
-          </ul>
-          <p class="notice">Różnica czasu: Sydney (AEST) jest zwykle +8 h względem Polski (CEST).</p>
-        </div>
-        <div class="card">
-          <h3>Dystrybutor (PL)</h3>
-          <ul class="list">
-            <li><b>ABAX Mariusz Niezgoda</b></li>
-            <li>ul. Narutowicza 25/54</li>
-            <li>78-400 Szczecinek</li>
-            <li>NIP: –</li>
-            <li>tel. 694 487 589</li>
-            <li>e-mail: phu.abax@gmail.com</li>
-          </ul>
-      </div>
-    </section>
-
   </main>
 
   <footer>
     <div class="wrap foot">
       <div>
-        © <span id="y"></span> GreenElf – Dystrybutor w Polsce • Ta strona jest przygotowana dla dystrybutora i może zawierać skrócone informacje o produktach.
-        <div class="notice">GreenElf Works, 15 Landers Rd, Lane Cove North, NSW 2066, Australia • Wersja strony dystrybutora (PL).</div>
+        © <span id="y"></span> GreenElf – ABAX Mariusz Niezgoda, Szczecinek • Oficjalny dystrybutor w Polsce
       </div>
       <div><a class="btn" href="#top">⬆︎ Do góry</a></div>
     </div>
